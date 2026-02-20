@@ -487,6 +487,42 @@ ul {
     background: #ffd43b;
 }
 
+.tag--flutter::before {
+    background: #02569b;
+}
+
+.tag--riverpod::before {
+    background: #0553b1;
+}
+
+.tag--hive::before {
+    background: #f5a623;
+}
+
+.tag--kubernetes::before {
+    background: #326ce5;
+}
+
+.tag--prometheus::before {
+    background: #e6522c;
+}
+
+.tag--fastapi::before {
+    background: #009688;
+}
+
+.tag--websocket::before {
+    background: #f7df1e;
+}
+
+.tag--firebase::before {
+    background: #ffca28;
+}
+
+.tag--watsonx::before {
+    background: #be95ff;
+}
+
 /* ---------- Compact Projects (More / Open Source) ---------- */
 .compact-projects {
     border-top: 1px solid var(--border);
@@ -811,5 +847,169 @@ ul {
 
     .section-heading {
         font-size: 1.3rem;
+    }
+}
+
+/* ---------- Project Cards Clickable ---------- */
+.project-card[data-project],
+.compact-project[data-project] {
+    cursor: pointer;
+}
+
+/* ---------- Project Modal ---------- */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    max-width: 700px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    transform: translateY(30px) scale(0.95);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-dim) var(--bg-card);
+}
+
+.modal-overlay.active .modal {
+    transform: translateY(0) scale(1);
+}
+
+.modal__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--border-light);
+    background: var(--bg-primary);
+    color: var(--text-secondary);
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition);
+    z-index: 10;
+    line-height: 1;
+}
+
+.modal__close:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.modal__image {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    background: var(--bg-secondary);
+}
+
+.modal__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal__body {
+    padding: var(--space-xl);
+}
+
+.modal__title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--text-primary);
+    margin-bottom: var(--space-md);
+}
+
+.modal__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+}
+
+.modal__desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--space-xl);
+}
+
+.modal__desc p {
+    margin-bottom: var(--space-md);
+}
+
+.modal__desc p:last-child {
+    margin-bottom: 0;
+}
+
+.modal__github {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 10px 24px;
+    background: transparent;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    color: var(--text-primary);
+    transition: all var(--transition);
+}
+
+.modal__github:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: 0 0 20px var(--accent-glow);
+    transform: translateY(-1px);
+}
+
+/* Modal responsive */
+@media (max-width: 700px) {
+    .modal {
+        max-height: 90vh;
+    }
+
+    .modal__image {
+        height: 180px;
+    }
+
+    .modal__title {
+        font-size: 1.2rem;
+    }
+
+    .modal__body {
+        padding: var(--space-lg);
     }
 }
