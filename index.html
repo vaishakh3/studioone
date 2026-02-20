@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studio One — Software Development Team</title>
+  <meta name="description"
+    content="Studio One is a software development team that builds exceptional digital products. View our portfolio of projects and get in touch." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+  <!-- Hero Banner -->
+  <div class="hero-banner" id="top">
+    <div class="hero-banner__overlay"></div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- Contact Email -->
+    <a href="mailto:studioone@team.dev" class="top-email">studioone@team.dev</a>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section class="section section--about" id="about">
+      <div class="section__inner">
+        <div class="about-header">
+          <h1 class="about-title">STUDIO ONE.</h1>
+          <span class="status-badge">
+            <span class="status-badge__dot"></span>
+            AVAILABLE FOR WORK
+          </span>
+        </div>
+
+        <p class="about-tagline">a team of developers who ship fast and build to last.</p>
+
+        <div class="about-bio">
+          <p>we love building. be it <span class="text-underline">products</span> or <span
+              class="text-underline">developer tools</span>, we believe in creating software that people are <span
+              class="text-bold">obsessed</span> with.</p>
+          <p>our projects span full-stack web apps, APIs, developer tools, and creative experiments. we always enjoy
+            exploring new stacks & pushing boundaries.</p>
+        </div>
+
+        <ul class="about-highlights">
+          <li><span class="highlight-arrow">↳</span> built and shipped <span class="text-bold">production-grade</span>
+            applications</li>
+          <li><span class="highlight-arrow">↳</span> crafted modern, <span class="text-bold">responsive</span> user
+            interfaces</li>
+          <li><span class="highlight-arrow">↳</span> designed and deployed <span class="text-bold">scalable</span>
+            backend APIs</li>
+          <li><span class="highlight-arrow">↳</span> active <span class="text-accent">open source</span> contributors
+          </li>
+        </ul>
+
+        <div class="social-links">
+          <a href="https://github.com/studio-one" class="social-btn" target="_blank" rel="noopener">GITHUB</a>
+          <a href="https://x.com/studio_one" class="social-btn" target="_blank" rel="noopener">X</a>
+          <a href="https://instagram.com/studio.one" class="social-btn" target="_blank" rel="noopener">INSTAGRAM</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FEATURED PROJECTS ========== -->
+    <section class="section section--featured" id="featured">
+      <div class="section__inner">
+        <h2 class="section-heading">
+          <span class="section-heading__icon">↘</span>
+          FEATURED PROJECTS
+        </h2>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <div class="project-card" data-animate>
+            <div class="project-card__image">
+              <img src="/images/project-1.webp" alt="DevFlow project screenshot" loading="lazy" />
+            </div>
+            <div class="project-card__info">
+              <div class="project-card__header">
+                <h3 class="project-card__title">DEVFLOW</h3>
+                <a href="#" class="project-card__link" aria-label="Visit DevFlow">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="2" y1="12" x2="22" y2="12" />
+                    <path
+                      d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                  </svg>
+                </a>
+              </div>
+              <p class="project-card__desc">a collaborative code review platform with real-time editing, inline
+                comments, and AI-powered suggestions for faster PR reviews.</p>
+              <div class="project-card__tags">
+                <span class="tag tag--react">REACT</span>
+                <span class="tag tag--node">NODE.JS</span>
+                <span class="tag tag--postgres">POSTGRESQL</span>
+                <span class="tag tag--socket">SOCKET.IO</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card" data-animate>
+            <div class="project-card__image">
+              <img src="/images/project-2.webp" alt="Sentinel Dashboard screenshot" loading="lazy" />
+            </div>
+            <div class="project-card__info">
+              <div class="project-card__header">
+                <h3 class="project-card__title">SENTINEL</h3>
+                <a href="#" class="project-card__link" aria-label="Visit Sentinel">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="2" y1="12" x2="22" y2="12" />
+                    <path
+                      d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                  </svg>
+                </a>
+              </div>
+              <p class="project-card__desc">an infrastructure monitoring dashboard that tracks server health, API
+                latency, and error rates with beautiful real-time visualizations.</p>
+              <div class="project-card__tags">
+                <span class="tag tag--typescript">TYPESCRIPT</span>
+                <span class="tag tag--next">NEXT.JS</span>
+                <span class="tag tag--redis">REDIS</span>
+                <span class="tag tag--grafana">GRAFANA</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card" data-animate>
+            <div class="project-card__image">
+              <img src="/images/project-3.webp" alt="Nomad CLI screenshot" loading="lazy" />
+            </div>
+            <div class="project-card__info">
+              <div class="project-card__header">
+                <h3 class="project-card__title">NOMAD CLI</h3>
+              </div>
+              <p class="project-card__desc">a blazing-fast CLI tool for scaffolding full-stack projects with
+                pre-configured CI/CD, linting, testing, and deployment pipelines.</p>
+              <div class="project-card__tags">
+                <span class="tag tag--go">GO</span>
+                <span class="tag tag--docker">DOCKER</span>
+                <span class="tag tag--bash">BASH</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card" data-animate>
+            <div class="project-card__image">
+              <img src="/images/project-4.webp" alt="Wavelength app screenshot" loading="lazy" />
+            </div>
+            <div class="project-card__info">
+              <div class="project-card__header">
+                <h3 class="project-card__title">WAVELENGTH</h3>
+                <a href="#" class="project-card__link" aria-label="Visit Wavelength">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="2" y1="12" x2="22" y2="12" />
+                    <path
+                      d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                  </svg>
+                </a>
+              </div>
+              <p class="project-card__desc">a music collaboration platform where producers share stems, remix tracks,
+                and connect with artists. 12k+ users, 3k+ tracks uploaded.</p>
+              <div class="project-card__tags">
+                <span class="tag tag--react">REACT</span>
+                <span class="tag tag--supabase">SUPABASE</span>
+                <span class="tag tag--ffmpeg">FFMPEG</span>
+                <span class="tag tag--next">NEXT.JS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== MORE PROJECTS ========== -->
+    <section class="section section--more" id="more">
+      <div class="section__inner">
+        <h2 class="section-heading">
+          <span class="section-heading__icon">↘</span>
+          MORE PROJECTS
+        </h2>
+
+        <div class="compact-projects">
+          <div class="compact-project" data-animate>
+            <span class="compact-project__name">INVOICELY</span>
+            <span class="compact-project__sep">/</span>
+            <span class="compact-project__desc">a simple invoicing tool for freelancers with PDF export and payment
+              tracking.</span>
+          </div>
+          <div class="compact-project" data-animate>
+            <span class="compact-project__name">SNAPDEPLOY</span>
+            <span class="compact-project__sep">/</span>
+            <span class="compact-project__desc">one-click deployment tool for static sites to multiple cloud providers
+              simultaneously.</span>
+          </div>
+          <div class="compact-project" data-animate>
+            <span class="compact-project__name">DATAVAULT</span>
+            <span class="compact-project__sep">/</span>
+            <span class="compact-project__desc">an encrypted file storage service with client-side encryption and
+              zero-knowledge architecture.</span>
+          </div>
+          <div class="compact-project" data-animate>
+            <span class="compact-project__name">PIXELCRAFT</span>
+            <span class="compact-project__sep">/</span>
+            <span class="compact-project__desc">a browser-based pixel art editor with animation support and sprite sheet
+              export. our fun side project.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CODING ACTIVITY ========== -->
+    <section class="section section--activity" id="activity">
+      <div class="section__inner">
+        <h2 class="section-heading">
+          <span class="section-heading__icon">↘</span>
+          CODING ACTIVITY
+        </h2>
+
+        <div class="activity-graph" id="activityGraph">
+          <!-- Generated by JS -->
+        </div>
+
+        <p class="activity-tagline">been on the <span class="text-accent">grind</span></p>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="section section--contact" id="contact">
+      <div class="section__inner">
+        <h2 class="section-heading">
+          <span class="section-heading__icon">↘</span>
+          GET IN TOUCH
+        </h2>
+
+        <div class="contact-box">
+          <p class="contact-text">WE'RE CURRENTLY AVAILABLE FOR NEW PROJECTS AND COLLABORATIONS. JUST DROP US A DM ON <a
+              href="https://x.com/studio_one" class="text-accent" target="_blank" rel="noopener">X</a> OR SHOOT US AN <a
+              href="mailto:studioone@team.dev" class="text-accent">EMAIL</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sticky Side Nav -->
+  <nav class="side-nav" id="sideNav">
+    <a href="#about" class="side-nav__link side-nav__link--active" data-section="about">ABOUT</a>
+    <a href="#featured" class="side-nav__link" data-section="featured">FEATURED</a>
+    <a href="#more" class="side-nav__link" data-section="more">MORE</a>
+    <a href="#activity" class="side-nav__link" data-section="activity">ACTIVITY</a>
+    <a href="#contact" class="side-nav__link" data-section="contact">CONTACT</a>
+  </nav>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__copy">© 2026 ALL RIGHTS RESERVED.</p>
+      <div class="footer__links">
+        <a href="https://x.com/studio_one" class="footer__link" target="_blank" rel="noopener">X</a>
+        <a href="https://github.com/studio-one" class="footer__link" target="_blank" rel="noopener">GITHUB</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
