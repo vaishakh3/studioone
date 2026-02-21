@@ -12,7 +12,7 @@ const projectData = {
     'oasis-lite': {
         title: 'OASIS LITE',
         image: '/images/project-1.webp',
-        github: 'https://github.com/studio-one/oasis-lite',
+        github: 'https://github.com',
         tags: [
             { label: 'FLUTTER', class: 'tag--flutter' },
             { label: 'SUPABASE', class: 'tag--supabase' }
