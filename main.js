@@ -3,6 +3,7 @@
    ======================================== */
 
 import './style.css';
+import emailjs from '@emailjs/browser';
 
 // ==========================================
 // PROJECT DATA
@@ -25,7 +26,7 @@ const projectData = {
     'glitch': {
         title: 'GLITCH',
         image: '/images/project-2.webp',
-        github: 'https://github.com/studio-one/glitch',
+        github: 'https://github.com/anima-regem/glitch',
         tags: [
             { label: 'FLUTTER', class: 'tag--flutter' },
             { label: 'RIVERPOD', class: 'tag--riverpod' },
@@ -39,7 +40,7 @@ const projectData = {
     'volt': {
         title: 'VOLT',
         image: '/images/project-3.webp',
-        github: 'https://github.com/studio-one/volt',
+        github: 'https://github.com/ashiqrahman10/volt-code',
         tags: [
             { label: 'KUBERNETES', class: 'tag--kubernetes' },
             { label: 'PYTHON', class: 'tag--python' },
@@ -55,7 +56,7 @@ const projectData = {
     'echolink': {
         title: 'ECHOLINK',
         image: '/images/project-4.webp',
-        github: 'https://github.com/studio-one/echolink',
+        github: 'https://github.com/anima-regem/EchoLinkDispatcherAI',
         tags: [
             { label: 'PYTHON', class: 'tag--python' },
             { label: 'FASTAPI', class: 'tag--fastapi' },
@@ -71,7 +72,7 @@ const projectData = {
     'vyajan': {
         title: 'VYAJAN',
         image: '/images/project-5.webp',
-        github: 'https://github.com/studio-one/vyajan',
+        github: 'https://github.com/anima-regem/Vyajan',
         tags: [
             { label: 'FLUTTER', class: 'tag--flutter' },
             { label: 'FIREBASE', class: 'tag--firebase' }
@@ -84,7 +85,7 @@ const projectData = {
     'helixapi': {
         title: 'HELIXAPI',
         image: '/images/project-6.webp',
-        github: 'https://github.com/studio-one/helixapi',
+        github: 'https://github.com/anima-regem/HelixAPI',
         tags: [
             { label: 'PYTHON', class: 'tag--python' },
             { label: 'FASTAPI', class: 'tag--fastapi' },
@@ -98,7 +99,7 @@ const projectData = {
     'rune': {
         title: 'RUNE',
         image: '/images/project-7.webp',
-        github: 'https://github.com/studio-one/rune',
+        github: 'https://github.com/anima-regem/rune',
         tags: [
             { label: 'PYTHON', class: 'tag--python' },
             { label: 'IBM WATSONX', class: 'tag--watsonx' }
@@ -322,6 +323,53 @@ function initProjectModal() {
 }
 
 // ==========================================
+// 6. CONTACT FORM — EmailJS
+// ==========================================
+function initContactForm() {
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('contactSubmit');
+    const status = document.getElementById('contactStatus');
+    const submitText = form?.querySelector('.contact-form__submit-text');
+    const submitLoading = form?.querySelector('.contact-form__submit-loading');
+
+    if (!form) return;
+
+    // ⚠️ Replace these with your EmailJS credentials
+    const EMAILJS_PUBLIC_KEY = 'Ze3-Yvj7W9rC29_jZ';
+    const EMAILJS_SERVICE_ID = 'service_v7qssfa';
+    const EMAILJS_TEMPLATE_ID = 'template_d1vo6ci';
+
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Show loading state
+        submitBtn.disabled = true;
+        submitText.style.display = 'none';
+        submitLoading.style.display = 'inline';
+        status.textContent = '';
+        status.className = 'contact-form__status';
+
+        try {
+            await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form);
+
+            status.textContent = '✓ MESSAGE SENT SUCCESSFULLY';
+            status.classList.add('contact-form__status--success');
+            form.reset();
+        } catch (error) {
+            console.error('EmailJS error:', error);
+            status.textContent = '✗ FAILED TO SEND. PLEASE TRY AGAIN.';
+            status.classList.add('contact-form__status--error');
+        } finally {
+            submitBtn.disabled = false;
+            submitText.style.display = 'inline';
+            submitLoading.style.display = 'none';
+        }
+    });
+}
+
+// ==========================================
 // INIT
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -330,4 +378,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initActivityGraph();
     initParallax();
     initProjectModal();
+    initContactForm();
 });

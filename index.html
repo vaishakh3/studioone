@@ -218,9 +218,36 @@
 
         <div class="contact-box">
           <p class="contact-text">WE'RE CURRENTLY AVAILABLE FOR NEW PROJECTS AND COLLABORATIONS. JUST DROP US A DM ON <a
-              href="https://x.com/studio_one" class="text-accent" target="_blank" rel="noopener">X</a> OR SHOOT US AN <a
-              href="mailto:studioone@team.dev" class="text-accent">EMAIL</a>.</p>
+              href="https://x.com/studio_one" class="text-accent" target="_blank" rel="noopener">X</a> OR FILL OUT THE
+            FORM BELOW.</p>
         </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="contact-form__row">
+            <div class="contact-form__group">
+              <label for="contactName" class="contact-form__label">NAME</label>
+              <input type="text" id="contactName" name="name" class="contact-form__input" placeholder="your name"
+                required />
+            </div>
+            <div class="contact-form__group">
+              <label for="contactEmail" class="contact-form__label">EMAIL</label>
+              <input type="email" id="contactEmail" name="email" class="contact-form__input"
+                placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="contact-form__group">
+            <label for="contactMessage" class="contact-form__label">MESSAGE</label>
+            <textarea id="contactMessage" name="message" class="contact-form__input contact-form__textarea"
+              placeholder="tell us about your project..." rows="5" required></textarea>
+          </div>
+          <div class="contact-form__footer">
+            <button type="submit" class="contact-form__submit" id="contactSubmit">
+              <span class="contact-form__submit-text">SEND MESSAGE</span>
+              <span class="contact-form__submit-loading" style="display:none;">SENDING...</span>
+            </button>
+            <p class="contact-form__status" id="contactStatus"></p>
+          </div>
+        </form>
       </div>
     </section>
   </main>
