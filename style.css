@@ -463,6 +463,22 @@ ul {
     background: #dc382d;
 }
 
+.tag--leaflet::before {
+    background: #199900;
+}
+
+.tag--tanstack::before {
+    background: #ff4154;
+}
+
+.tag--zustand::before {
+    background: #8b5e3c;
+}
+
+.tag--vercel::before {
+    background: #ffffff;
+}
+
 .tag--grafana::before {
     background: #f46800;
 }

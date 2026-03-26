@@ -23,18 +23,24 @@ const projectData = {
       <p>The system was designed to centralize execution, accountability, and finance tracking within a single scalable interface.</p>
     `
     },
-    'glitch': {
-        title: 'GLITCH',
-        image: '/images/project-2.webp',
-        github: 'https://github.com/anima-regem/glitch',
+    'gasundo': {
+        title: 'GASUNDO',
+        image: '/images/project-gasundo.png',
+        github: 'https://github.com/vaishakh3/gasundo',
         tags: [
-            { label: 'FLUTTER', class: 'tag--flutter' },
-            { label: 'RIVERPOD', class: 'tag--riverpod' },
-            { label: 'HIVE', class: 'tag--hive' }
+            { label: 'NEXT.JS', class: 'tag--next' },
+            { label: 'SUPABASE', class: 'tag--supabase' },
+            { label: 'LEAFLET', class: 'tag--leaflet' },
+            { label: 'TANSTACK QUERY', class: 'tag--tanstack' },
+            { label: 'ZUSTAND', class: 'tag--zustand' },
+            { label: 'REDIS', class: 'tag--redis' },
+            { label: 'VERCEL', class: 'tag--vercel' }
         ],
         description: `
-      <p>Glitch is a personal productivity and project tracking application designed to manage milestones, habits, and daily execution in a structured way. The system supports hierarchical project organization with milestones, recurring habits, and one-off chores, along with time estimation and completion tracking.</p>
-      <p>It includes persistent local data storage, a day-completion heatmap for visual progress analytics, streak tracking for habits, and customizable interface options (AMOLED dark mode, high contrast, adjustable text scaling). The application was built to prioritize focused execution and long-term consistency through measurable daily progress.</p>
+      <p>GasUndo is a production-grade, crowdsourced PWA engineered to provide real-time restaurant availability during the Kerala LPG crisis. It combines geospatial data with live, user-generated status updates to deliver accurate, continuously evolving availability insights across districts.</p>
+      <p>The platform implements a distributed validation model where users can report, confirm, and discuss statuses, improving data integrity through consensus. It is built on a scalable architecture using Next.js App Router, Supabase (Auth + DB), and Upstash Redis for rate limiting, with server-side caching to handle traffic spikes efficiently.</p>
+      <p>The frontend leverages TanStack Query for data synchronization, Zustand for state management, and Leaflet for map rendering. The system also includes analytics instrumentation to monitor usage patterns and optimize performance.</p>
+      <p>GasUndo highlights the effectiveness of combining real-time systems, community input, and scalable web architecture to address high-impact, real-world challenges.</p>
     `
     },
     'volt': {
@@ -106,6 +112,20 @@ const projectData = {
         ],
         description: `
       <p>Rune is an AI-driven educational platform powered by IBM watsonx, designed to generate personalized quizzes, smart notes, flashcards, summaries, and academic project support tools. It transforms syllabus inputs and reference materials into structured, adaptive study resources tailored to a student's learning pace.</p>
+    `
+    },
+    'glitch': {
+        title: 'GLITCH',
+        image: '/images/project-2.webp',
+        github: 'https://github.com/anima-regem/glitch',
+        tags: [
+            { label: 'FLUTTER', class: 'tag--flutter' },
+            { label: 'RIVERPOD', class: 'tag--riverpod' },
+            { label: 'HIVE', class: 'tag--hive' }
+        ],
+        description: `
+      <p>Glitch is a personal productivity and project tracking application designed to manage milestones, habits, and daily execution in a structured way. The system supports hierarchical project organization with milestones, recurring habits, and one-off chores, along with time estimation and completion tracking.</p>
+      <p>It includes persistent local data storage, a day-completion heatmap for visual progress analytics, streak tracking for habits, and customizable interface options (AMOLED dark mode, high contrast, adjustable text scaling). The application was built to prioritize focused execution and long-term consistency through measurable daily progress.</p>
     `
     }
 };
@@ -290,7 +310,13 @@ function initProjectModal() {
         modalDesc.innerHTML = project.description;
 
         // GitHub link
-        modalGithub.href = project.github;
+        if (project.github) {
+            modalGithub.href = project.github;
+            modalGithub.style.display = 'inline-flex';
+        } else {
+            modalGithub.removeAttribute('href');
+            modalGithub.style.display = 'none';
+        }
 
         // Show modal
         overlay.classList.add('active');
