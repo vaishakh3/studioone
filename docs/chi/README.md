@@ -102,6 +102,11 @@ The snapshot covers both public packages: `chi` and `middleware`. It contains
    generated sibling package links ending in `.html` even with
    `prettyUrls: "slash"`, which produced broken links. This site uses the
    default HTML URL mode and checks local links after generation.
+6. **Legacy APIs need migration guidance.** Upstream explicitly deprecates
+   [`RealIP`](https://github.com/go-chi/chi/blob/b1c9ab47626cc46b34393ad4d35779c4363c4e1e/middleware/realip.go#L20)
+   because it trusts spoofable headers. Preserve that warning in the
+   generated entry, and direct new integrations to the client-IP resolvers
+   appropriate for their trusted proxy configuration.
 
 The documentation retains upstream's copyright and MIT license in
 `public/LICENSE.txt`. Sourcey 3.6.5 generates the HTML, search index, navigation
