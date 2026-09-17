@@ -1,0 +1,37 @@
+skill: chi-docs-readback
+version: "0.1.0"
+runners:
+  readback:
+    default: true
+    type: graph
+    graph:
+      name: chi-docs-readback
+      result_from: [publication]
+      steps:
+        - id: publication
+          tool: http.read
+          scopes: [net:http]
+          inputs:
+            allowed_hosts:
+              - www.thestudioone.xyz
+              - raw.githubusercontent.com
+            stop_on_error: true
+            requests:
+              - id: homepage
+                method: GET
+                url: https://www.thestudioone.xyz/docs/chi/
+              - id: router
+                method: GET
+                url: https://www.thestudioone.xyz/docs/chi/package-root.html
+              - id: middleware
+                method: GET
+                url: https://www.thestudioone.xyz/docs/chi/pkg-middleware.html
+              - id: evidence
+                method: GET
+                url: https://www.thestudioone.xyz/docs/chi/evidence.json
+              - id: license
+                method: GET
+                url: https://www.thestudioone.xyz/docs/chi/LICENSE.txt
+              - id: upstream-module
+                method: GET
+                url: https://raw.githubusercontent.com/go-chi/chi/b1c9ab47626cc46b34393ad4d35779c4363c4e1e/go.mod
