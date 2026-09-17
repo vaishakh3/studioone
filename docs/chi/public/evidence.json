@@ -30,7 +30,8 @@
     },
     {
       "subject": "extraction",
-      "command": "sourcey godoc --module /Users/devin/bounty-work/chi-upstream --out /Users/devin/bounty-work/chi-godoc.json",
+      "command": "sourcey godoc --module <pinned-upstream-checkout> --out <snapshot.json>",
+      "path_note": "Workstation paths are redacted; snapshot_sha256 binds the unmodified output.",
       "toolchain": "go version go1.26.8 darwin/arm64",
       "result": "Sourcey: wrote godoc snapshot for github.com/go-chi/chi/v5; Packages: 2. The snapshot was copied without modification into docs/chi/godoc.json."
     },
