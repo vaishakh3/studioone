@@ -5,10 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run docs:build && vite build",
+    "docs:build": "node docs/chi/build.mjs",
+    "docs:check": "node --check docs/chi/build.mjs && node --check docs/chi/check.mjs && node docs/chi/check.mjs",
     "preview": "vite preview"
   },
   "devDependencies": {
+    "sourcey": "3.6.5",
     "vite": "^7.3.1"
   },
   "dependencies": {
