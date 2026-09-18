@@ -83,26 +83,26 @@ The snapshot covers both public packages: `chi` and `middleware`. It contains
 56 package functions, 20 types and 45 methods across 35 source files, exceeding
 20 distinct public APIs without counting prose headings as APIs.
 
-1. **Example coverage is incomplete.** The snapshot contains zero extracted
+- **Example coverage is incomplete.** The snapshot contains zero extracted
    `Example*` entries. Upstream's standalone `_examples` programs are outside
    the ordinary `go list ./...` package traversal. The reference therefore
    links to those examples and does not claim that Sourcey rendered them.
-2. **Middleware composition needs narrative guidance.** Generated signatures
+- **Middleware composition needs narrative guidance.** Generated signatures
    do not communicate ordering or the difference between a router-wide stack
    and an inline route stack. The API map above points readers to `Use`,
    `With`, `Group` and `Route`, plus upstream's working REST example.
-3. **Cancellation and body limits need integration tests.** A generated
+- **Cancellation and body limits need integration tests.** A generated
    `Timeout` or `RequestSize` entry cannot prove how a particular application
    reacts. Their contracts are called out above to avoid treating them as
    automatic request termination or automatic error responses.
-4. **The reference is a fixed revision.** It is not a claim that this commit
+- **The reference is a fixed revision.** It is not a claim that this commit
    is a tagged release or the latest upstream state. Source links pin the
    same revision as the extraction. Updating this snapshot requires review.
-5. **Go package navigation currently requires HTML URLs.** Sourcey 3.6.5
+- **Go package navigation currently requires HTML URLs.** Sourcey 3.6.5
    generated sibling package links ending in `.html` even with
    `prettyUrls: "slash"`, which produced broken links. This site uses the
    default HTML URL mode and checks local links after generation.
-6. **Legacy APIs need migration guidance.** Upstream explicitly deprecates
+- **Legacy APIs need migration guidance.** Upstream explicitly deprecates
    [`RealIP`](https://github.com/go-chi/chi/blob/b1c9ab47626cc46b34393ad4d35779c4363c4e1e/middleware/realip.go#L20)
    because it trusts spoofable headers. Preserve that warning in the
    generated entry, and direct new integrations to the client-IP resolvers
@@ -111,3 +111,6 @@ The snapshot covers both public packages: `chi` and `middleware`. It contains
 The documentation retains upstream's copyright and MIT license in
 `public/LICENSE.txt`. Sourcey 3.6.5 generates the HTML, search index, navigation
 and machine-readable context exports.
+
+The [production readback](./verify/receipts/README.md) supplies signed runx
+receipts, the public verification key, and observed HTTP response digests.
