@@ -1,0 +1,14 @@
+{
+  "signature_mode": "production",
+  "trees": [
+    {
+      "root_receipt_id": "sha256:89e0ef0470bf00356a7b00a78ada464a2d701f88bffc6b102445aa9f2f104ab1",
+      "receipt_count": 2,
+      "parent_missing": null,
+      "valid": true,
+      "findings": []
+    }
+  ],
+  "unreadable_files": [],
+  "valid": true
+}
